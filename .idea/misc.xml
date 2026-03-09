@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/e-commerce/configserver/pom.xml" />
         <option value="$PROJECT_DIR$/e-commerce/eurekaServer/pom.xml" />
         <option value="$PROJECT_DIR$/e-commerce/apiGateway/pom.xml" />
+        <option value="$PROJECT_DIR$/e-commerce/zoneService/pom.xml" />
       </list>
     </option>
   </component>
