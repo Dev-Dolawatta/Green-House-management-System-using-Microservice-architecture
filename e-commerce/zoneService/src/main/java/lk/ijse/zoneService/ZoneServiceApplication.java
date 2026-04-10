@@ -9,5 +9,4 @@ public class ZoneServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ZoneServiceApplication.class, args);
 	}
-
 }
