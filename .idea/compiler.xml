@@ -2,12 +2,14 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="apiGateway" />
         <module name="eurekaServer" />
+        <module name="senserService" />
       </profile>
       <profile name="Annotation profile for zoneService" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -26,6 +28,7 @@
       <module name="apiGateway" options="-parameters" />
       <module name="configserver" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
+      <module name="senserService" options="-parameters" />
       <module name="zoneService" options="-parameters" />
     </option>
   </component>
