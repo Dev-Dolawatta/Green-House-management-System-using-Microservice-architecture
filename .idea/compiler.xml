@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="apiGateway" />
+        <module name="cropService" />
         <module name="eurekaServer" />
         <module name="senserService" />
         <module name="automationService" />
@@ -29,6 +30,7 @@
       <module name="apiGateway" options="-parameters" />
       <module name="automationService" options="-parameters" />
       <module name="configserver" options="-parameters" />
+      <module name="cropService" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
       <module name="senserService" options="-parameters" />
       <module name="zoneService" options="-parameters" />
