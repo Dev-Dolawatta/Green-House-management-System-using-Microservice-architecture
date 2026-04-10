@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class AutomationLog {
+public class ActionLog {
     @Id
     private String id;
 
