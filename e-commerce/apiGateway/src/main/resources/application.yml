@@ -3,28 +3,49 @@ server:
 
 spring:
   application:
-    name: API-GATEWAY
-
+    name: api-gateway
+  config:
+    import: optional:configserver:http://localhost:8888
   cloud:
     gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
       routes:
-
+        # Zone Service
         - id: zone-service
-          uri: lb://ZONE-SERVICE
+          uri: lb://zone-service
           predicates:
             - Path=/api/zones/**
+          filters:
+            - AuthenticationFilter
 
+        # Sensor Service
         - id: sensor-service
-          uri: lb://SENSOR-SERVICE
+          uri: lb://sensor-service
           predicates:
             - Path=/api/sensors/**
+          filters:
+            - AuthenticationFilter
 
+        # Automation Service
         - id: automation-service
-          uri: lb://AUTOMATION-SERVICE
+          uri: lb://automation-service
           predicates:
             - Path=/api/automation/**
+          filters:
+            - AuthenticationFilter
 
+        # Crop Service
         - id: crop-service
-          uri: lb://CROP-SERVICE
+          uri: lb://crop-service
           predicates:
             - Path=/api/crops/**
+          filters:
+            - AuthenticationFilter
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
