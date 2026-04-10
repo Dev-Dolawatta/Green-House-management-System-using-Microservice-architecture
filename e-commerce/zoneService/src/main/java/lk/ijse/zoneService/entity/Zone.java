@@ -1,20 +1,25 @@
 package lk.ijse.zoneService.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 @Entity
+@Table(name = "zones")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Zone {
+
         @Id
+        @GeneratedValue(strategy = GenerationType.UUID)
         private String id;
 
         private String name;
 
-        private double minTemp;
-
-        private double maxTemp;
+        private Double minTemp;
+        private Double maxTemp;
 
         private String deviceId;
-
 }
