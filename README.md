@@ -1,15 +1,15 @@
-AGMS - Automated Greenhouse Management System
+**AGMS - Automated Greenhouse Management System**
 A cloud-native, microservices-based system designed to enhance crop yield and efficiently manage greenhouse environments using real-time IoT data and automated decision-making.
-content:
+**content:**
   Executive Summary
   Structural Design & Technical Framework
   Hardware & Software Prerequisites
   Core Service Ecosystem
   Deployment & API Validation
-Executive Summary
+**Executive Summary**
 The AGMS provides a sophisticated interface for supervising greenhouse climates. By integrating with third-party IoT networks, it monitors vital signs like heat and moisture levels in real-time. An integrated Logic Engine evaluates these metrics against predefined thresholds, automatically activating climate control hardware (like ventilation or irrigation) to keep the environment within ideal parameters.
 
-Structural Design & Technical Framework
+**Structural Design & Technical Framework**
 The system utilizes a Microservices Architecture, ensuring each component can scale independently and remains highly resilient.
 
 🛠 Integrated Technologies
@@ -27,7 +27,7 @@ Identity Management: JWT-based Security
 
 Persistence Layer: Spring Data JPA
 
-Hardware & Software Prerequisites
+**Hardware & Software Prerequisites**
 To ensure a smooth deployment, your environment should meet the following specifications:
 
 Memory (RAM): 8GB minimum; 16GB is ideal for full-stack performance.
@@ -36,7 +36,7 @@ Development Kit: JDK 17 or more recent.
 
 Performance Tuning: On machines with constrained resources, it is recommended to adjust JVM heap sizes for each service during startup.
 
-Core Service Ecosystem
+**Core Service Ecosystem**
 Infrastructure Tier
 Service Discovery (eureka-server): The phonebook for all services (Port: 8761).
 
