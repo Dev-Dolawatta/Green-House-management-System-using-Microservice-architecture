@@ -1,57 +1,75 @@
-**AGMS - Automated Greenhouse Management System**
-A cloud-native, microservices-based system designed to enhance crop yield and efficiently manage greenhouse environments using real-time IoT data and automated decision-making.
-**content:**
-  Executive Summary
-  Structural Design & Technical Framework
-  Hardware & Software Prerequisites
-  Core Service Ecosystem
-  Deployment & API Validation
-**Executive Summary**
-The AGMS provides a sophisticated interface for supervising greenhouse climates. By integrating with third-party IoT networks, it monitors vital signs like heat and moisture levels in real-time. An integrated Logic Engine evaluates these metrics against predefined thresholds, automatically activating climate control hardware (like ventilation or irrigation) to keep the environment within ideal parameters.
+🌿 AGMS: Automated Greenhouse Management System
+A cloud-native, microservices-driven ecosystem engineered for yield optimization and autonomous climate regulation.
 
-**Structural Design & Technical Framework**
-The system utilizes a Microservices Architecture, ensuring each component can scale independently and remains highly resilient.
+📑 Table of Contents
+Project Summary
 
-🛠 Integrated Technologies
-Core Framework: Spring Boot (Java 17+)
+Architecture & Tech Stack
 
-Service Registry: Spring Cloud Netflix Eureka
+System Prerequisites
 
-Centralized Entry: Spring Cloud Gateway
+Microservices Infrastructure
 
-Dynamic Configuration: Spring Cloud Config
+API Operations & Testing
 
-Service Interaction: OpenFeign (Declarative REST Client)
+🟢 01. Overview
+The Automated Greenhouse Management System (AGMS) is an intelligent platform designed to synchronize environmental variables with plant biology. By integrating Real-Time IoT Telemetry with a Custom Logic Engine, the system eliminates manual oversight. It monitors critical data points such as ambient temperature and humidity, triggering hardware responses (e.g., ventilation systems) to sustain a perfect growth environment.
 
-Identity Management: JWT-based Security
+🛠 02. Architecture & Tech Stack
+This project follows a decoupled Microservices Architecture to ensure high availability, fault tolerance, and independent scaling.
 
-Persistence Layer: Spring Data JPA
+Backend Core: Spring Boot (Java 17)
 
-**Hardware & Software Prerequisites**
-To ensure a smooth deployment, your environment should meet the following specifications:
+Discovery: Spring Cloud Netflix Eureka
 
-Memory (RAM): 8GB minimum; 16GB is ideal for full-stack performance.
+Gateway: Spring Cloud Gateway (Single Entry Point)
 
-Development Kit: JDK 17 or more recent.
+Configuration: Spring Cloud Config Server
 
-Performance Tuning: On machines with constrained resources, it is recommended to adjust JVM heap sizes for each service during startup.
+Inter-Service: OpenFeign (Declarative REST Client)
 
-**Core Service Ecosystem**
+Security: JWT Authentication (Edge-level Security)
+
+Persistence: Spring Data JPA (Relational Database)
+
+💻 03. System Requirements
+RAM: 8GB Minimum (16GB Recommended for full cluster)
+
+Environment: JDK 17 or higher
+
+Optimization: For machines with limited memory, it is recommended to set -Xmx heap limits on individual service containers.
+
+🏗 04. Microservices Breakdown
 Infrastructure Tier
-Service Discovery (eureka-server): The phonebook for all services (Port: 8761).
+eureka-server (Port: 8761): The central registry for service discovery.
 
-Config Hub (config-server): Manages settings across the environment (Port: 8888).
+config-server (Port: 8888): Externalized configuration management.
 
-Security Gateway (api-gateway): Filters all traffic and handles authentication (Port: 8080).
+api-gateway (Port: 8080): Unified routing and JWT security enforcement.
 
-Operational Tier
-Logic Engine (automation-service): The "brain" that issues commands based on sensor data (Port: 8083).
+Domain Tier
+automation-service (Port: 8083): The "Brain" of the system. Evaluates thresholds and issues hardware commands.
 
-Spatial Manager (zone-service): Configures greenhouse sectors and links new IoT hardware (Port: 8081).
+zone-service (Port: 8081): Manages physical sectors and IoT device registration.
 
-Telemetry Fetcher (sensor-service): Polls external IoT providers every 10 seconds for new data (Port: 8082).
+sensor-service (Port: 8082): Telemetry engine; polls external IoT data every 10 seconds.
 
-Plant Lifecycle (crop-service): Tracks crop varieties, health status, and growth cycles (Port: 8084).
+crop-service (Port: 8084): Tracks plant inventory, health, and growth cycles.
+
+🧪 05. API Operations & End-to-End Flow
+Use the provided AGMS_Postman_Collection.json to validate the system.
+
+Identity: Execute Auth: Login Admin to retrieve your JWT Bearer Token.
+
+Authorize: Apply this token to the Authorization Header of all subsequent calls.
+
+Configure: Use Zone: Create Zone to define environment limits and sync IoT devices.
+
+Initialize: Create a crop lifecycle via Crop: Create Crop Batch.
+
+Stress Test: Use Simulate Sensor Data to inject "Extreme Heat" and bypass polling delays.
+
+Audit: Fetch Automation: Get Logs to verify the logic engine triggered TURN_FAN_ON.
 <img width="1600" height="748" alt="image" src="https://github.com/user-attachments/assets/e27573b1-cb73-4408-ae28-8ef19acddff1" />
 
   
