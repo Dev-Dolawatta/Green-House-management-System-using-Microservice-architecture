@@ -1,7 +1,7 @@
-🌿 AGMS: Automated Greenhouse Management System
+🌿** AGMS: Automated Greenhouse Management System**
 A cloud-native, microservices-driven ecosystem engineered for yield optimization and autonomous climate regulation.
 
-📑 Table of Contents
+📑 **Table of Contents**
 Project Summary
 
 Architecture & Tech Stack
@@ -12,10 +12,10 @@ Microservices Infrastructure
 
 API Operations & Testing
 
-🟢 01. Overview
+ **01.** **Overview**
 The Automated Greenhouse Management System (AGMS) is an intelligent platform designed to synchronize environmental variables with plant biology. By integrating Real-Time IoT Telemetry with a Custom Logic Engine, the system eliminates manual oversight. It monitors critical data points such as ambient temperature and humidity, triggering hardware responses (e.g., ventilation systems) to sustain a perfect growth environment.
 
-🛠 02. Architecture & Tech Stack
+🛠 **02.** **Architecture & Tech Stack**
 This project follows a decoupled Microservices Architecture to ensure high availability, fault tolerance, and independent scaling.
 
 Backend Core: Spring Boot (Java 17)
@@ -32,14 +32,14 @@ Security: JWT Authentication (Edge-level Security)
 
 Persistence: Spring Data JPA (Relational Database)
 
-💻 03. System Requirements
+💻 **03. System Requirements**
 RAM: 8GB Minimum (16GB Recommended for full cluster)
 
 Environment: JDK 17 or higher
 
 Optimization: For machines with limited memory, it is recommended to set -Xmx heap limits on individual service containers.
 
-🏗 04. Microservices Breakdown
+💻 **04. Microservices Breakdown**
 Infrastructure Tier
 eureka-server (Port: 8761): The central registry for service discovery.
 
@@ -56,7 +56,7 @@ sensor-service (Port: 8082): Telemetry engine; polls external IoT data every 10 
 
 crop-service (Port: 8084): Tracks plant inventory, health, and growth cycles.
 
-🧪 05. API Operations & End-to-End Flow
+💻 **05. API Operations & End-to-End Flow**
 Use the provided AGMS_Postman_Collection.json to validate the system.
 
 Identity: Execute Auth: Login Admin to retrieve your JWT Bearer Token.
@@ -70,6 +70,7 @@ Initialize: Create a crop lifecycle via Crop: Create Crop Batch.
 Stress Test: Use Simulate Sensor Data to inject "Extreme Heat" and bypass polling delays.
 
 Audit: Fetch Automation: Get Logs to verify the logic engine triggered TURN_FAN_ON.
+
 <img width="1600" height="748" alt="image" src="https://github.com/user-attachments/assets/e27573b1-cb73-4408-ae28-8ef19acddff1" />
 
   
